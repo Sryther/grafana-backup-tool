@@ -33,11 +33,11 @@ def create_datasource(payload):
     return int(status_code)
 
 def send_grafana_get(url):
-    r = requests.get(url, headers=http_get_headers)
+    r = requests.get(url, headers=http_get_headers, verify=False)
     return r
 
 def send_grafana_post(url, json_payload):
-    r = requests.post(url, headers=http_post_headers, data=json_payload)
+    r = requests.post(url, headers=http_post_headers, data=json_payload, verify=False)
     return r
 
 
